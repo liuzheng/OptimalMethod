@@ -526,7 +526,7 @@ $c=(c_1,c_2,\cdots,c_n)$
       s.t. & h_l(\mathbf{x})= 0, l=1,2,\cdots,L\\
            & g_m(\mathbf{x})\leq0, m=1,2,\cdots,M
   \end{eqnarray*}
-式中，$n$ 为自变量$\mathbf{x}$的维数；$L$为等式约束的数目；$M$为不等式约束的数目
+式中，$n$ 为自变量$\mathbf{x}$
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
 
