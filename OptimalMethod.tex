@@ -133,6 +133,7 @@ breaklinks=true
 \makeatother
 
 
+\titlegraphic{\includegraphics[width=2.3cm]{2.png}}
 \begin{document}
 
 \frame{\titlepage}
@@ -186,7 +187,7 @@ breaklinks=true
 包括
 \begin{itemize}
     \item 无约束极值问题
-      $$\min_xf(x)$$
+       $$ \min_xf(x) $$ 
     \item 约束条件下的极值问题
       \begin{eqnarray*}
         & \underset{x}{\min}f(x)\\
@@ -194,8 +195,8 @@ breaklinks=true
            & h_i(x)=0, i=1,2,\cdots,n
   \end{eqnarray*}
   其中，极大值问题可以转换为极小值问题来进行求解。如求：
-  $\underset{x}{\max}f(x)$
-  可以转换为：$\underset{x}{\min}-f(x)$
+   $ \underset{x}{\max}f(x) $ 
+  可以转换为： $ \underset{x}{\min}-f(x) $ 
 \end{itemize}
 
 \end{frame}
@@ -221,7 +222,7 @@ breaklinks=true
   \item \textcolor{red}{线性最优化}：目标函数和约束条件都是线性的则称为线性最优化。
     
     \textcolor{red}{非线性最优化}：目标函数和约束条件如果含有非线性的，则称为非线性最优化。
-     
+     
   \item \textcolor{red}{静态最优化}：如果可能的方案与时间无关，则是静态最优化问题。
         
     \textcolor{red}{动态最优化}：如果可能的方案与时间有关，则是动态最优化问题
@@ -237,10 +238,10 @@ breaklinks=true
 有约束最优化模型一般具有以下形式：
 \begin{center}
 \begin{tabular}{ccc}
-  \tablecell{c}{$\underset{x}{\min}f(x)$\\$s.t.~\cdots\cdots$} & 或 & \tablecell{c}{$\underset{x}{\max}f(x)$\\$s.t.~\cdots\cdots$} 
+  \tablecell{c}{ $ \underset{x}{\min}f(x) $ \\ $ s.t.~\cdots\cdots $ } & 或 & \tablecell{c}{ $ \underset{x}{\max}f(x) $ \\ $ s.t.~\cdots\cdots $ } 
 \end{tabular}
 \end{center}
-其中$f(x)$为目标函数，省略号表示约束式子，可以是等式约束，也可以是不等式约束。
+其中 $ f(x) $ 为目标函数，省略号表示约束式子，可以是等式约束，也可以是不等式约束。
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
 
@@ -346,13 +347,13 @@ breaklinks=true
 %
 %变量说明：
 %
-%$x_{ij}$:从第$i$ 城运往第j地的蔬菜数量（$i=1,2,3;j=1,2,3,4$）
+% $ x_{ij} $ :从第 $ i $  城运往第j地的蔬菜数量（ $ i=1,2,3;j=1,2,3,4 $ ）
 %
-%$a_{ij}$:从第$i$ 城运往第$j$地的单位运费（$ i=1,2,3;j=1,2,3,4 $）
+% $ a_{ij} $ :从第 $ i $  城运往第 $ j $ 地的单位运费（ $  i=1,2,3;j=1,2,3,4  $ ）
 %
-%$b_i$:从第$i$ 城调出的蔬菜总量 
+% $ b_i $ :从第 $ i $  城调出的蔬菜总量 
 %
-%$c_j$:第$j$ 地所需蔬菜总量 
+% $ c_j $ :第 $ j $  地所需蔬菜总量 
 %
 %\end{frame}
 %%%%%%%%%%% Slide End %%%%%%%%%%
@@ -361,14 +362,14 @@ breaklinks=true
 %%\subsection{\hfill Overview}
 %\begin{frame}
 %\frametitle{可以建立如下模型}
-%    $$\max z=\sum_{i=1}^3\sum_{j=1}^4a_{ij}x_{ij}$$
+%     $$ \max z=\sum_{i=1}^3\sum_{j=1}^4a_{ij}x_{ij} $$ 
 %\begin{center}
 %  \begin{eqnarray*}
 %    s.t.\left\{
 %    \begin{array}{cc}
 %      \sum_{j=1}^4x_{ij}=b_i&(i=1,2,3)\\
 %      \sum_{i=1}^3x_{ij}=c_j&(i=1,2,3,4)\\
-%      \tablecell{c}{$x_{ij}\geq0$\\$x_{ij}\leq\min(b_i,c_i)$}&(i=1,2,3;j=1,2,3,4)
+%      \tablecell{c}{ $ x_{ij}\geq0 $ \\ $ x_{ij}\leq\min(b_i,c_i) $ }&(i=1,2,3;j=1,2,3,4)
 %
 %    \end{array}\right.
 %  \end{eqnarray*}
@@ -383,7 +384,7 @@ breaklinks=true
 %\subsection{\hfill Overview}
 \begin{frame}
 \frametitle{列子}
-~~~~某钢厂两个炼钢炉同时各用一种方法炼钢。第一种炼法每炉用 $a$ 小时，第二种用 $b$ 小时（包括清炉时间）。假定这两种炼法，每炉出钢都是k公斤，而炼 $1$ 公斤钢的平均燃料费第一法为 $m$ 元，第二法为 $n$ 元。若要求在 $c$ 小时内炼钢公斤数不少于 $d$ ，试列出燃料费最省的两种方法的分配方案的数学模型。
+~~~~某钢厂两个炼钢炉同时各用一种方法炼钢。第一种炼法每炉用  $ a $  小时，第二种用  $ b $  小时（包括清炉时间）。假定这两种炼法，每炉出钢都是 $ k $ 公斤，而炼  $ 1 $  公斤钢的平均燃料费第一法为  $ m $  元，第二法为  $ n $  元。若要求在  $ c $  小时内炼钢公斤数不少于  $ d $  ，试列出燃料费最省的两种方法的分配方案的数学模型。
 
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
@@ -393,8 +394,8 @@ breaklinks=true
 %\subsection{\hfill Overview}
 \begin{frame}
 \frametitle{解法}
-设用第一种炼法炼钢 $x_1$ 炉，第二种炼钢 $x_2$ 炉
-$$\max z=k(mx+ny)$$
+设用第一种炼法炼钢  $ x_1 $  炉，第二种炼钢  $ x_2 $  炉
+ $$ \max z=k(mx+ny) $$ 
 \begin{center}
   \begin{eqnarray*}
     s.t.\left\{
@@ -425,8 +426,8 @@ $$\max z=k(mx+ny)$$
 %\subsection{\hfill 凸集}
 \begin{frame}
 \frametitle{凸集}
-定义：$\mathbf{X}$是$\mathbf{E}^n$ 空间的点集，$x_1$ 和$x_2$是$\mathbf{X}$上任意两点，若对任意$0\leq\lambda\leq1$使得$$\lambda x_1+(1-\lambda)x_2\in \mathbf{X}$$
-则称$\mathbf{X}$为凸集。
+定义： $ \mathbf{X} $ 是 $ \mathbf{E}^n $  空间的点集， $ x_1 $  和 $ x_2 $ 是 $ \mathbf{X} $ 上任意两点，若对任意 $ 0\leq\lambda\leq1 $ 使得 $$ \lambda x_1+(1-\lambda)x_2\in \mathbf{X} $$ 
+则称 $ \mathbf{X} $ 为凸集。
 \begin{center}
   \begin{figure}[htbp]
     \begin{minipage}{0.4\textwidth}
@@ -456,13 +457,13 @@ $$\max z=k(mx+ny)$$
 \end{eqnarray*}
 这里
 \begin{center}
-$A=(a_{ij})_{m,n}$
+ $ A=(a_{ij})_{m,n} $ 
 
-$x=(x_1,x_2,\cdots,x_n)^T$
+ $ x=(x_1,x_2,\cdots,x_n)^T $ 
 
-$b=(b_1,b_2,\cdots,b_n)^T$
+ $ b=(b_1,b_2,\cdots,b_n)^T $ 
 
-$c=(c_1,c_2,\cdots,c_n)$
+ $ c=(c_1,c_2,\cdots,c_n) $ 
 \end{center}
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
@@ -495,12 +496,12 @@ $c=(c_1,c_2,\cdots,c_n)$
 %
 %  ~~~~~~确定初始的基本可行解等价于确定初始的可行基，一旦初始的可行基确定了，那么对应的初始基本可行解也就唯一确定
 %
-%  ~~~~~~为了讨论方便，不妨假设在标准型线性规划中，系数矩阵$A$中前$m$个系数列向量恰好构成一个可行基，即
-%  $A=(BN)$，
+%  ~~~~~~为了讨论方便，不妨假设在标准型线性规划中，系数矩阵 $ A $ 中前 $ m $ 个系数列向量恰好构成一个可行基，即
+%   $ A=(BN) $ ，
 %  
 % ~~~~~~ 其中
-%  $B=(P_1,P_2,\cdots,P_m)$为基变量$x_1,x_2,\cdots,x_m$的系数列向量构成的可行基，
-% $N=(p_{m+1},P_{m+2},\cdots,P_n)$为非基变量 $x_{m+1},x_{m+2},\cdots,x_n$ 的系数列向量构成的矩阵。 
+%   $ B=(P_1,P_2,\cdots,P_m) $ 为基变量 $ x_1,x_2,\cdots,x_m $ 的系数列向量构成的可行基，
+%  $ N=(p_{m+1},P_{m+2},\cdots,P_n) $ 为非基变量  $ x_{m+1},x_{m+2},\cdots,x_n $  的系数列向量构成的矩阵。 
 %
 %\end{frame}
 %%%%%%%%%%% Slide End %%%%%%%%%%
@@ -520,35 +521,15 @@ $c=(c_1,c_2,\cdots,c_n)$
 %\subsection{\hfill Overview}
 \begin{frame}
 \frametitle{多目标规划标准型}
-求 $\mathbf{x}={x_1,x_2,\cdots,x_n}\in D\subset E^n$，使
+求  $ \mathbf{x}={x_1,x_2,\cdots,x_n}\in D\subset E^n $ ，使
       \begin{eqnarray*}
         & \min \mathbf{f}(x)=\{f_1(x),f_2(x),\cdots,f_N(x)\}\\
       s.t. & h_l(\mathbf{x})= 0, l=1,2,\cdots,L\\
            & g_m(\mathbf{x})\leq0, m=1,2,\cdots,M
   \end{eqnarray*}
-式中，$n$ 为自变量$\mathbf{x}$的维数；$L$为等式约束的数目；$M$为不等式约束的数目
+式中， $ n $  为自变量 $ \mathbf{x} $ 的维数； $ L $ 为等式约束的数目； $ M $ 为不等式约束的数目
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
-
-
-
-
-\end{document}
-%%%%%%%%%% One Slide %%%%%%%%%%
-\subsection{\hfill Overview}
-\begin{frame}
-\frametitle{Overview}
-
-
-\end{frame}
-%%%%%%%%%% Slide End %%%%%%%%%%
-
-
-
-
-\end{document}
-
-
 
 
 \section{非线性规划}
@@ -556,14 +537,14 @@ $c=(c_1,c_2,\cdots,c_n)$
 %\subsection{\hfill Overview}
 \begin{frame}
 \frametitle{非线性规划问题的一般数学模型}
-$$\min f(x)$$
+ $$ \min f(x) $$ 
 \begin{eqnarray*}
   s.t.\begin{array}{ccc}
     g_i(x)&\leq&0,i=1,2,\cdots,m\\
     h_j(x)&=&0,j=1,2,\cdots,l
   \end{array}
 \end{eqnarray*}
-其中，$x\in E^n$，$f(x)$为目标函数，$g_i(x),h_j(x)$为约束函数，这些函数中至少有一个是非线性函数。
+其中， $ x\in E^n $ ， $ f(x) $ 为目标函数， $ g_i(x),h_j(x) $ 为约束函数，这些函数中至少有一个是非线性函数。
 
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
@@ -573,7 +554,7 @@ $$\min f(x)$$
 \subsection{\hfill 凸函数}
 \begin{frame}
 \frametitle{凸函数}
-定义：在某个开区间$C$内的凸函数$f$在$C$内连续，且在除可数个点之外的所有点可微。如果$C$是闭区间，那么$f$有可能在$C$的端点不连续。
+定义：在某个开区间 $ C $ 内的凸函数 $ f $ 在 $ C $ 内连续，且在除可数个点之外的所有点可微。如果 $ C $ 是闭区间，那么 $ f $ 有可能在 $ C $ 的端点不连续。
   \begin{figure}[htbp]
     \centering
     \caption{凸函数}
@@ -586,16 +567,59 @@ $$\min f(x)$$
 
 
 %%%%%%%%%% One Slide %%%%%%%%%%
-\subsection{\hfill }
+\subsection{\hfill 下降迭代法}
 \begin{frame}
-\frametitle{}
+\frametitle{下降迭代法的基本思想}
+~~~~~~任取一个初始迭代点
+ $ \mathbf{x}^{(0)} $ ，在
+ $ \mathbf{x}^{(0)} $ 处找一个下降方向
+ $ \mathbf{p}^{(0)} $ ，移动
+ $ \mathbf{x}^{(0)} $ 到
+ $ \mathbf{x}^{(0)}+\lambda_0\mathbf{p}^{(0)} $ 处，令
+ $ \mathbf{x}^{(1)}=\mathbf{x}^{(0)}+\lambda_0\mathbf{p}^{(0)} $ ，显然
+ $ f(\mathbf{x}^{(1)})<f(\mathbf{x}^{(0)}) $ 。然后判断
+ $ \mathbf{x}^{(0)} $ 是否为极小值点，若是，则停止迭代；否则，再从
+ $ \mathbf{x}^{(1)} $ 出发，找比
+ $ \mathbf{x}^{(1)} $ 更好的点
+ $ \mathbf{x}^{(2)},\cdots, $ 如此继续，就产生了一个解点的序列
+ $ \{\mathbf{x}^{(k)}\} $ ，满足
 
+ $$ f(\mathbf{x}^{(0)})>f(\mathbf{x}^{(1)})>\cdots>f(\mathbf{x}^{(k)})>\cdots $$ 
 
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
 
 \section{智能优化方法}
+
+%%%%%%%%%% One Slide %%%%%%%%%%
+\subsection{\hfill Overview}
+\begin{frame}
+\frametitle{Overview}
+
+
+\end{frame}
+%%%%%%%%%% Slide End %%%%%%%%%%
+
+
+
 \section{变分法与动态规划}
+
+%%%%%%%%%% One Slide %%%%%%%%%%
+%\subsection{\hfill Overview}
+\begin{frame}
+\frametitle{变分法和动态规划}
+~~~~~~变分法涉及泛函，泛函又基于实变，以我的数学功底暂时无法完全理解，曾经在为专业课《工程光学》里提到过一次变分
+
+原文为：
+
+~~~~~~费马原理指出，光线从A点传到B点，经过任意多次的折射或反射，其光程为极值（极大值或极小值），可以用光程的一次变分为零来表示，即：
+ $$ \delta\Delta=\delta\int_{A\to B}n(x,y,z)ds=0 $$ 
+
+~~~~~~动态规划就不用多赘述了，相信大家基本都折腾过。
+
+\end{frame}
+%%%%%%%%%% Slide End %%%%%%%%%%
+
 
 
 
