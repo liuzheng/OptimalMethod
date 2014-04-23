@@ -234,7 +234,7 @@ breaklinks=true
 %%%%%%%%%% One Slide %%%%%%%%%%
 \subsection{\hfill 有约束最优化问题的数学建模}
 \begin{frame}
-\frametitle{有约束最优化问题的数学建模}
+\frametitle{数学建模}
 有约束最优化模型一般具有以下形式：
 \begin{center}
 \begin{tabular}{ccc}
@@ -589,19 +589,6 @@ breaklinks=true
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
 
-\section{智能优化方法}
-
-%%%%%%%%%% One Slide %%%%%%%%%%
-\subsection{\hfill Overview}
-\begin{frame}
-\frametitle{Overview}
-
-
-\end{frame}
-%%%%%%%%%% Slide End %%%%%%%%%%
-
-
-
 \section{变分法与动态规划}
 
 %%%%%%%%%% One Slide %%%%%%%%%%
@@ -615,7 +602,7 @@ breaklinks=true
 ~~~~~~费马原理指出，光线从A点传到B点，经过任意多次的折射或反射，其光程为极值（极大值或极小值），可以用光程的一次变分为零来表示，即：
  $$ \delta\Delta=\delta\int_{A\to B}n(x,y,z)ds=0 $$ 
 
-~~~~~~动态规划就不用多赘述了，相信大家基本都折腾过。
+~~~~~~动态规划就不用多赘述了，
 
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
@@ -624,15 +611,71 @@ breaklinks=true
 
 
 %%%%%%%%%% One Slide %%%%%%%%%%
-\subsection{\hfill Overview}
+\subsection{\hfill 动态规划}
+\begin{frame}
+  \frametitle{斐波那契数列(Fibonacci polynomial)}
+  function fib(n)
+
+~~~~if n = 0 or n = 1
+
+~~~~~~~~ return 1
+
+~~~~    return fib(n − 1) + fib(n − 2)
+
+当n=5时，fib(5)的计算过程如下:
+\begin{enumerate}
+\item fib(5)
+\item fib(4) + fib(3)
+\item (fib(3) + fib(2)) + (fib(2) + fib(1))
+\item ((fib(2) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1))
+\item (((fib(1) + fib(0)) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1))
+\end{enumerate}
+\end{frame}
+%%%%%%%%%% Slide End %%%%%%%%%%
+
+%%%%%%%%%% One Slide %%%%%%%%%%
+%\subsection{\hfill Overview}
+\begin{frame}
+  \frametitle{$O(n)$}
+array map [0\ldots n] = { 0 => 0, 1 => 1  }
+
+fib( n  )
+
+~~~~if ( map m does not contain key n )
+
+~~~~~~~~m[n] := fib(n − 1) + fib(n − 2)
+
+~~~~~~~~~~~~return m[n]
+
+~~~~~~将前$n$个已经算出的数保存在数组map中，这样在后面的计算中可以直接应用前面的结果，从而避免了重复计算。算法的运算时间变为$O(n)$
+\end{frame}
+%%%%%%%%%% Slide End %%%%%%%%%%
+
+\section{智能优化方法}
+
+%%%%%%%%%% One Slide %%%%%%%%%%
+%\subsection{\hfill Overview}
+\begin{frame}
+  \frametitle{智能优化方法}
+  \begin{itemize}
+      \item 神经网络
+      \item 模拟退火
+      \item 遗传算法
+      \item 蚁群算法
+  \end{itemize}
+
+\end{frame}
+%%%%%%%%%% Slide End %%%%%%%%%%
+
+
+%%%%%%%%%% One Slide %%%%%%%%%%
+%\subsection{\hfill Overview}
 \begin{frame}
 \frametitle{Overview}
 
 
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
-
-
 
 
 \end{document}
