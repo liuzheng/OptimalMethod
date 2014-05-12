@@ -155,9 +155,9 @@ breaklinks=true
 %%%%%%%%%% Slide End %%%%%%%%%%
 
 %%%%%%%%%% One Slide %%%%%%%%%%
-%\subsection{Overview}
+\subsection{组成}
 \begin{frame}
-\frametitle{Overview}
+\frametitle{组成}
 ~~~~~~一种常见的多层结构的前馈网络（Multilayer Feedforward Network）由三部分组成
 
 \begin{itemize}
@@ -203,7 +203,7 @@ $f$ 为传递函数，通常为非线性函数。一般有traingd(), tansig(), h
 
 
 %%%%%%%%%% One Slide %%%%%%%%%%
-%\subsection{Overview}
+\subsection{数学表示}
 \begin{frame}
 \frametitle{数学表示}
 \resizebox{\textwidth}{!}{$t = f(\vec{W}\vec{A'}+b)$}
@@ -277,7 +277,7 @@ $f$ 为传递函数
 %%%%%%%%%% One Slide %%%%%%%%%%
 \subsection{学习函数}
 \begin{frame}
-\frametitle{learngd}
+\frametitle{学习函数:learngd}
 ~~~~~~函数learngd有一个相关的参数--学习速率lr。权重和偏置的变化通过梯度的负数乘上学习速率倍数得到。学习速率越大，步进越大。如果学习速率太大算法就会变得不稳定。如果学习速率太小，算法就需要很长的时间才能收敛。当learnFcn设置为learngd时，就为每一个权重和偏置设置了学习速率参数的缺省值。
 
 \end{frame}
@@ -287,7 +287,7 @@ $f$ 为传递函数
 %%%%%%%%%% One Slide %%%%%%%%%%
 %\subsection{Overview}
 \begin{frame}
-\frametitle{leardgdm（带动力的梯度下降法）}
+\frametitle{学习函数：leardgdm（带动力的梯度下降法）}
 ~~~~~~除了learngd以外，还有一种增加方式算法常被用到，它能提供更快的收敛速度--learngdm,带动量的最速下降法。动力允许网络不但根据当前梯度而且还能根据误差曲面最近的趋势响应。就像一个低通滤波器一样，动量允许网络忽略误差曲面的小特性。没有动量，网络又可能在一个局部最小中被卡住。有了动量网络就能够平滑这样的最小。动量能够通过把权重变得与上次权重变化的部分和由算法规则得到的新变化的和相同而加入到网络学习中去。上一次权重变化对动量的影响由一个动量常数来决定，它能够设为0到1之间的任意值。当动量常数为0时，权重变化之根据梯度得到。当动量常数为1时新的权重变化等于上次的权重变化，梯度值被忽略了。
 
 \end{frame}
@@ -295,20 +295,10 @@ $f$ 为传递函数
 
 
 %%%%%%%%%% One Slide %%%%%%%%%%
-%\subsection{Overview}
+\subsection{反馈函数及其他高级函数}
 \begin{frame}
-\frametitle{Overview}
-
-
-\end{frame}
-%%%%%%%%%% Slide End %%%%%%%%%%
-
-
-%%%%%%%%%% One Slide %%%%%%%%%%
-%\subsection{Overview}
-\begin{frame}
-\frametitle{Overview}
-
+\frametitle{反馈函数及其他高级函数}
+~~~~~~反馈函数及其他高级函数这里我就不介绍了，有兴趣自己去了解吧，我不是做这块的，了解不多。
 
 \end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
@@ -487,11 +477,11 @@ nnstart
 
 %%%%%%%%%% One Slide %%%%%%%%%%
 %\subsection{Overview}
-\begin{frame}
-\frametitle{Overview}
+%\begin{frame}
+%\frametitle{Overview}
 
 
-\end{frame}
+%\end{frame}
 %%%%%%%%%% Slide End %%%%%%%%%%
 
 
