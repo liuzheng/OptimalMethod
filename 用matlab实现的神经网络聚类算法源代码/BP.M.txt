@@ -1,0 +1,30 @@
+clear; 
+NNTWARN OFF; 
+ 
+%读入训练数据 
+load -ASCII result_0605_128.txt;   train_base=result_0605_128';clear result_0605_128; 
+%读入训练分类 
+load -ASCII zsy_0606_std128.txt;   train_class=zsy_0606_std128;clear zsy_0606_std128; 
+train_class=train_class(:,1)'; 
+%读入待分类数据 
+%load -ASCII new_0704128_1001_1010.txt;   data=new_0704128_1001_1010;clear new_0704128_1001_1010; 
+ 
+p=train_base; 
+t=train_class; 
+p=p(:,1:10);t=t(:,1:10);%取出前十组数据小试一下，也可以注释掉，全部算完时间花费大约半小时 
+TEMP=zeros(size(p,1),2);TEMP(:,1)=0;TEMP(:,2)=150; 
+%定义BP网络 
+net = newff(TEMP,[5 1],{'tansig' 'purelin'}); 
+%训练网络 
+for j=1:size(p,2) 
+    P=p(:,1:j);T=t(:,1:j); 
+    net = train(net,P,T); 	  
+end 
+%用训练数据较核网络 
+Y = sim(net,p); 
+plot(p,t,p,Y,'o') 
+ 
+%下面对待分类数据进行分类 
+%因为耗时太长，故而注释掉，可以在命令行输入。 
+%result=sim(net,data); 
+

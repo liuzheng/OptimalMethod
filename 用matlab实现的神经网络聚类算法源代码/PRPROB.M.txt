@@ -1,0 +1,30 @@
+function [alphabet,targets] = prprob() 
+source0=  zeros(256,31);  
+source =  zeros(256,30);  
+train_file = 'e:\matlab\zsy_0606_std128.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:31 
+      s = fscanf(fp_t,'%s',1); 
+      source0(i,j) = str2double(s);       
+   end   
+end 
+Ti=source0(:,1); 
+fclose(fp_t); 
+train_file = 'e:\matlab\result.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:30 
+      s = fscanf(fp_t,'%s',1); 
+      source(i,j) = str2double(s);       
+   end   
+end 
+fclose(fp_t); 
+ 
+T = zeros(256,9); 
+for i=1:256 
+ T(i,Ti(i))=1; 
+end 
+alphabet=source'; 
+targets=T'; 
+

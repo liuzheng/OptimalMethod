@@ -1,0 +1,50 @@
+source = zeros(256,31); 
+source0=zeros(256,30); 
+source1 = zeros(1,30); 
+center=zeros(9,30); 
+ 
+train_file = 'e:\matlab\zsy_0606_std128.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:31 
+      s = fscanf(fp_t,'%s',1); 
+      source(i,j) = str2double(s);       
+   end   
+end 
+train_file = 'e:\matlab\result.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:30 
+      s = fscanf(fp_t,'%s',1); 
+      source0(i,j) = str2double(s);       
+   end   
+end 
+ 
+for k=1:9 
+ii = 1; 
+    for i = find((source(:,1))'==k) 
+         source1(ii,:) = source0(i,:); 
+          ii = ii+1; 
+   end 
+   center(k,:)=mean(source1); 
+end 
+object=zeros( 1,30); 
+u=100;   
+results=zeros( u,1); 
+train_file = 'e:\matlab\data\new_0704128_1001_1010.txt';   
+fp_t = fopen(train_file,'rt'); 
+for i = 1: u 
+   for j = 1:30 
+      s = fscanf(fp_t,'%s',1); 
+      object(i,j) = str2double(s);       
+   end   
+end 
+distance=zeros(u,9); 
+for i=1:u 
+    for j=1:9 
+    distance(i,j)=norm(object(i,:)-center(j,:)); 
+   end 
+   results(i,1)=find(distance(i,:)==min((distance(i,:))'));end 
+results     
+
+

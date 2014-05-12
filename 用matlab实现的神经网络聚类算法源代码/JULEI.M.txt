@@ -1,0 +1,31 @@
+clear 
+clc 
+ 
+%sample =  zeros(200,30); 
+%train_file = 'C:\My Documents\matlab\new_0704128_1001_1010.txt'; 
+%fp_t = fopen(train_file,'rt'); 
+%for i = 1:200 
+%   for j = 1:30 
+%      s = fscanf(fp_t,'%s',1); 
+%      sample(i,j) = str2double(s);      
+%   end   
+%end 
+%fclose(fp_t); 
+%X=sample; 
+ 
+source2 =  zeros(256,30); 
+train_file = 'D:\m\result.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:30 
+      s = fscanf(fp_t,'%s',1); 
+      source2(i,j) = str2double(s);      
+   end   
+end 
+fclose(fp_t); 
+X=source2; 
+Y=pdist(X,'mahal'); 
+Z=linkage(Y,'ward'); 
+dendrogram(Z); 
+t=cluster(Z,9) 
+

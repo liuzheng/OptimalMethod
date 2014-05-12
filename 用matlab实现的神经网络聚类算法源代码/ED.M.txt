@@ -1,0 +1,23 @@
+clear 
+%读入训练数据 
+load -ASCII result_0605_128.txt;   train=result_0605_128;clear result_0605_128; 
+%读入训练分类 
+load -ASCII zsy_0606_std128.txt;   train_class=zsy_0606_std128;clear zsy_0606_std128; 
+train_class=train_class(:,1); 
+%读入待分类数据 
+load -ASCII new_0704128_1001_1010.txt;   data=new_0704128_1001_1010;clear new_0704128_1001_1010; 
+iii = 0;  
+rr= size(data,1); 
+comp=zeros(size(train)); 
+zsy_0716128_result_91_N=0; 
+for i=1:rr,  %计算欧氏距离 
+   iii = iii + 1; 
+   for n=1:size(train,1), 
+       comp(n,:)=data(i,:); 
+   end 
+   [Y,I] = min(sum((comp-train).^2,2));%分类结果 
+    zsy_0716128_result_91_N(iii)=train_class(I); 
+   disp(num2str(i)); %显示计算进度 
+end 
+result=zsy_0716128_result_91_N'  %显示并写入结果 
+save -ASCII result.txt zsy_0716128_result_91_N;

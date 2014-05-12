@@ -1,0 +1,68 @@
+source0=  zeros(256,31);  
+source =  zeros(256,30);  
+Ti=zeros(256,1); 
+T = zeros(256,9); 
+train_file = 'e:\matlab\zsy_0606_std128.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:31 
+      s = fscanf(fp_t,'%s',1); 
+      source0(i,j) = str2double(s);       
+   end   
+end 
+Ti=source0(:,1); 
+fclose(fp_t); 
+train_file = 'e:\matlab\result.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:30 
+      s = fscanf(fp_t,'%s',1); 
+      source(i,j) = str2double(s);       
+   end   
+end 
+fclose(fp_t); 
+ 
+for i=1:256 
+ T(i,Ti(i))=1; 
+end 
+ 
+alphabet=source'; 
+targets=T'; 
+ 
+[S2,Q] = size(targets); 
+ 
+S1 = 16;   
+net = newff(minmax(alphabet),[S1 S2],{'logsig' 'logsig'},'traingdx'); 
+net.LW{2,1} = net.LW{2,1}*0.01; 
+net.b{2} = net.b{2}*0.01; 
+ 
+net.performFcn = 'sse';         
+net.trainParam.goal = 0.1;     
+net.trainParam.show = 20;       
+net.trainParam.epochs = 5000;   
+net.trainParam.mc = 0.95;      
+ 
+P = alphabet; 
+T = targets; 
+ 
+[net,tr] = train(net,P,T); 
+source =  zeros(256,30);  
+ 
+train_file = 'e:\matlab\data\new_0704128_1001_1010.txt'; 
+fp_t = fopen(train_file,'rt'); 
+for i = 1:256 
+   for j = 1:30 
+      s = fscanf(fp_t,'%s',1); 
+      source(i,j) = str2double(s);       
+   end   
+end 
+fclose(fp_t); 
+ 
+m=sim(net,source') 
+result = zeros(256,1); 
+for i=1:256 
+    result(i,1)=find(m(:,i)==max(m(:,i))); 
+end 
+result 
+
+

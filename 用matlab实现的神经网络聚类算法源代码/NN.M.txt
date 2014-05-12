@@ -1,0 +1,30 @@
+clear 
+%读入训练数据 
+load -ASCII result_0605_128.txt;   train_base=result_0605_128';clear result_0605_128; 
+%读入训练分类 
+load -ASCII zsy_0606_std128.txt;   train_class=zsy_0606_std128;clear zsy_0606_std128; 
+train_class=train_class(:,1)'; 
+%读入待分类数据 
+%load -ASCII new_0704128_1001_1010.txt;   data=new_0704128_1001_1010;clear new_0704128_1001_1010; 
+ 
+P=train_base; 
+T=train_class; 
+MAX=max(max(P));MIN=min(min(P)); 
+TEMP=zeros(size(P,1),2);TEMP(:,1)=MIN;TEMP(:,2)=MAX; 
+ 
+%开始训练网络 
+maxlr=maxlinlr(P,'bias'); 
+net=newlin(TEMP,1,[0],maxlr); 
+net.trainParam.epochs=5000000; 
+net.trainParam.goal=0.1; 
+[net,tr]=train(net,P,T); 
+ 
+%用训练矩阵来校验网络 
+A=sim(net,P); 
+plot(T);hold on;plot(A,'o'); 
+ 
+%下面对待分类数据进行分类 
+%因为耗时太长，故而注释掉，可以在命令行输入。 
+%result=sim(net,data); 
+
+
